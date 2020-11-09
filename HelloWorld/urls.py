@@ -14,11 +14,20 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.conf.urls import url
 
-from HelloWorld import view
+from HelloWorld import view, search, search2
 
 urlpatterns = [
-    path('hello/',view.hello),
+    url(r'^search-form$', search.search_form),
+    url(r'^search$', search.search),
+    url(r'^search-post$', search2.search_post),
+    url(r'^search-post1$', search2.tohtml),
 ]
+
+
+
+
+
+
 
