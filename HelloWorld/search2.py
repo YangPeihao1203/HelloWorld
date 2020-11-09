@@ -9,7 +9,7 @@
 
 from django.shortcuts import render
 from django.views.decorators import csrf
-
+import sys
 
 # # 接收POST请求数据
 # def search_post(request):
@@ -26,6 +26,7 @@ def tohtml(request):
 def search_post(request):
 #  获取图片，此时该文件格式为二进制
     print("函数执行了。。。")
+    print("项目的绝对路径为",sys.argv)
     commodity_image = request.FILES.get("commodityImage", None)
 #  使用二进制的方式打开新建文件，不改变文件，直接写入
     with open("picture.jpg",mode="wb") as image_file:
